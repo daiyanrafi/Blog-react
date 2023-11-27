@@ -9,14 +9,14 @@ const DetailsPage = () => {
 
     let {postID} = useParams();
 
-    let {list,setList}= useState(null);
+    let [list,setList]= useState(null);
 
     useEffect(()=>{
 
         (async()=>{
 
             let result = await postDetails(postID);
-            setList(result)
+            setList(result);
         })()
 
     },[postID])
